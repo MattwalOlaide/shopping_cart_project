@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8, chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<meta name="description" content="World Leading Footware Outfit.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<meta name="HandheldFriendly" content="true" >
+<link href={{url_for('static', filename='images/favicon.png')}} rel="shortcut icon" type="image/png"/>
+<link href="static/foundation/icons/foundation-icons.css" rel="stylesheet" type="text/css"/>
+<link href="static/foundation/css/foundation.css" rel="stylesheet" type="text/css"/>
+<link href="static/foundation/css/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="static/css/layout.css" rel="stylesheet" type="text/css"/>
+<title>{% block title %} {% endblock  %}</title>
+</head>
+<body>
+	<div class="topHeader">
+		<div class="logo"></div>
+
+		<div class="mainNav">
+			<div class="contain-to-grid">
+	        	<nav class="top-bar" data-topbar role="navigation">
+		        	<ul class="title-area">
+		            <li class="name"></li>
+		            <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
+		            </ul>
+		            <section class="top-bar-section">
+					<ul>
+						<li><a href="/">HOME</a></li>
+						<li><a href="#abt">ABOUT US</a></li>
+						<li><a href="/shoes">SHOES</a></li>
+						<li><a href="#our_info">CONTACT</a></li>
+						<li><a href="/reg">SIGN UP</a></li>
+						<li><a href="/login">SIGN IN</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<section class="row mainContainer"> 
+{% block body %}
+
+
+{% endblock %}
+	</section>
+<div class="clear"></div>
+<div class="footer" id="our_info">
+	
+	<div class="addy large-2 left maringLft5Rem maringRt2Rem">
+		<h2>FEET-ON</h2>
+		<p>
+			<i class="fa fa-phone fa-rotate-90"></i>
+	        <font>
+	        + 234 803 912 9437
+	        </font></i></p>
+	        <p>
+	        <a id="mail" href="mailto:info@feeton.com">  info@feeton.com </a>
+        </p>
+        <p>
+        	&copy; 2015 Feet-on Inc.
+        </p>
+
+	</div>
+	<div class="large-4 left maringRt2Rem">
+		<h2>MAIL US</h2>
+		<form>
+			<input type="text" class="textbox" name="contact_name" placeholder="Your Name..." /> 
+			<input type="text" class="textbox" name="contact_email" placeholder="Your Email..." /> 
+			<input type="text" class="textbox" name="contact_subject" placeholder="Message Subject..." /> 
+			<textarea class="textarea" name="contact_message"></textarea>
+			<br/>
+			<input type="submit" name="submit_ontact" value="SEND" class="button" />
+		</form>
+	</div>
+	<div class="newsletter large-3 maringLft5Rem left">
+		<h2>STAY INFORMED</h2>
+		<form>
+		<input type="text" name="subscriber_mail" class="textbox" placeholder="Your Email..." />
+		<input type="submit" name="submit_subscriber" class="button" value="SUBSCRIBE"/>
+		</form>
+		<div class="socials">
+		<ul>
+        	
+			<li><a  class="linkedIn" title="linkedin" id="linkedin" href="#" target="_blank"></a></li>
+            <li><a  class="twitter" id="twitter" title="twitter" href="#" target="_blank"></a></li>
+            <li><a  class="facebook" title="facebook" id="facebook" href="#" target="_blank"></a></li>
+           
+        </ul>
+	</div>
+	</div>
+</div>
+<script src="static/foundation/js/vendor/jquery.js"></script>
+<script src="static/foundation/js/foundation.min.js"></script>
+<script>
+  $(document).foundation();
+</script>
+    
+<script>
+  	$(document).ready(function(){
+	  	$('#login-content').hide();
+		$('#login-trigger').click(function(){
+			
+			$(this).next('#login-content').slideToggle();
+			$(this).toggleClass('active');
+								
+			if ($(this).hasClass('active')) 
+			{
+				$(this).find('span').html('&#x25B2;');
+				
+			}
+			else 
+			
+			{
+				$(this).find('span').html('&#x25BC;')
+				
+			}
+		})
+  });
+		 
+</script>
+
+<script src="static/js/jquery.bxslider.min.js"></script>
+<script language="javascript">
+$(document).ready(function(){
+  $('.slider4').bxSlider({
+	 auto: true,
+	autoControls: false,
+	slideWidth: 235,
+    minSlides: 2,
+    maxSlides: 4,
+    moveSlides: 1
+  });
+});
+</script>
+
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("img", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("img");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+
+</body>
+</html>

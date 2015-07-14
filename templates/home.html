@@ -1,0 +1,37 @@
+{# _shopping_cart_project/templates/index.html_ #}
+{% extends "layout.html" %}
+{% block title %} Feet-on |  Home {% endblock  %}
+{% block body %}
+<div class="large-12">
+	{% for messages in get_flashed_messages() %}
+		{{ messages }}
+	{% endfor %}
+	<ul data-orbit>
+		<img src="static/banners/banner1.png"/>
+		<img src="static/banners/banner1.png"/>
+		<img src="static/banners/banner1.png"/>
+		<img src="static/banners/banner1.png"/>
+	</ul>
+	<div class="clear"></div>
+	<div class=" large-5 left midbox">
+		<h1>New Arrivals</h1>
+		<p>Check into a Feet-on store in your neighbourhood and pick up the latest of your designer foot wears. You never can get new stocks from manufucturers earlier anywhere else. </p>
+		<p> You need new footies for the summer. Prices are not competitive but unique... no one offers better.</p>
+	</div>
+	<div class="large-5 right midbox">
+		<h1>New Stores</h1>
+		<p>Check into a Feet-on store in your neighbourhood and pick up the latest of your designer foot wears. You never can get new stocks from manufucturers earlier anywhere else. </p>
+		<p> You need new footies for the summer. Prices are not competitive but unique... no one offers better.</p>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="large-12" id="abt">
+	<p>&nbsp;</p>
+	<h1>ABOUT US</h1>
+	<p>&nbsp;</p>
+	<p>Feet-on is the world leading supplier of shoes for everybody. Yes! Everybody. Our dominance in the industry is largely dependent to our ability to expand capacity. Meeting needs of every possible customer in every part of the world. Our stores  are open 24/7/365. We are very much interested in ensuring that your precious feet dont ever step bare on the ground.<p>
+	<p>
+		At Feet-on, we ensure that you get the shoes that <em>fit on</em> you!
+	<p>
+</div>
+{% endblock %}

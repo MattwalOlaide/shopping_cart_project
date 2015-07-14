@@ -1,0 +1,57 @@
+{# _shopping_cart_project/templates/index.html_ #}
+{% extends "layout.html" %}
+{% block title %} Feet-on |  Admin {% endblock  %}
+{% block body %}
+<div class="large-12">
+
+	<div class="large-8 maringLft8Rem">
+		{% for messages in get_flashed_messages() %}
+			{{ messages }}
+		{% endfor %}
+		<h1>Upload Shoes</h1>
+		<form>
+		<label for="upload" class="textbox" ><strong>CHOOSE FILE</strong><input type="file" name="shoe_upload" id="upload" /></label>
+		<input type="text" name="shoe_name" class="textbox" />
+		<input type="text" name="shoe_price" class="textbox" />
+		<input type="text" name="shoe_quantity" class="textbox" />
+		<textarea name="shoe_description" class="textarea"></textarea>
+		<br/>
+		<input type="submit" class="button" value="Upload" />
+	</form>
+	</div>
+	<div class="clear"></div>
+	<div class="large-8 maringLft8Rem">
+		<form>
+		<h1>Manage Stock</h1>
+		
+		<table>
+			<tr>
+				<th>Product ID</th>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>Delete</th>
+			</tr>
+			<tr>
+				<td>001</td>
+				<td contenteditable="true">Sneakers</td>
+				<td contenteditable="true">50000</td>
+				<td contenteditable="true">10</td>
+				<td><i class="fi-trash size-24"></i></td>
+			</tr>
+			<tr>
+				<td>002</td>
+				<td contenteditable="true">Sneakers</td>
+				<td contenteditable="true">50000</td>
+				<td contenteditable="true">10</td>
+				<td><i class="fi-trash size-24"></i></td>
+			</tr>
+		</table>
+		
+		<br/>
+		<input type="submit" class="button" value="SUBMIT" />
+		</form>
+	</div>
+	<div class="clear"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{# _shopping_cart_project/templates/index.html_ #}
+{% extends "layout.html" %}
+{% block title %} Feet-on |  Shoes {% endblock  %}
+{% block body %}
+<div class="large-12">
+	{% for messages in get_flashed_messages() %}
+		{{ messages }}
+	{% endfor %}
+	<div clas="shoeContainer large-8">
+		<img src="static/images/Corbis-42-18564554.jpg" draggable="true" ondragstart="drag(event)" class="left"/>
+	</div>
+	<div class="large-1 left">&nbsp;</div>
+	<div class="large-3 left">
+		<img src="static/images/cart.jpg"  ondrop="drop(event)" ondragover="allowDrop(event)"  />
+	</div>
+<div class="clear"></div>
+{% endblock %}
