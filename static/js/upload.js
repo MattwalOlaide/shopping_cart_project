@@ -10,6 +10,7 @@ $(function(){
 		url: '/upload',
 		uploadFinished:function(i,file,response){
 			$.data(file).addClass('done');
+			
 		},
 		
     	error: function(err, file) {
