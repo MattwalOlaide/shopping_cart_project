@@ -4,14 +4,10 @@ from flask import Flask, render_template, redirect, url_for, request, session, f
 from functools import wraps
 from flask.ext.sqlalchemy import SQLAlchemy
 from sqlalchemy import and_, select
-#from api.user import new_user
-#from .forms import LoginForm
 from models import *
 
 
-#import hashlib
 
-#WTF_CSRF_ENABLED = True
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shopping_cart.db'
@@ -20,13 +16,6 @@ app.secret_key = "aswa23ewd4rfeiu7"
 app.config['UPLOAD_FOLDER'] = 'static/images/stock'
 
 ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'gif']
-
-# OPENID_PROVIDERS = [
-#     {'name': 'Google', 'url': 'https://www.google.com/accounts/o8/id'},
-#     {'name': 'Yahoo', 'url': 'https://me.yahoo.com'},
-#     {'name': 'AOL', 'url': 'http://openid.aol.com/<username>'},
-#     {'name': 'Flickr', 'url': 'http://www.flickr.com/<username>'},
-#     {'name': 'MyOpenID', 'url': 'https://www.myopenid.com'}]
 
 
 db =  SQLAlchemy(app)
@@ -63,7 +52,7 @@ def login():
 		user_info = Users.query.filter_by(user_email = form_email).first()
 		
 		if user_info is None:
-			#"Invalid username or password. , user_password = form_password"
+			
 			error = "Invalid username or password. "
 		else:
 			if request.form['email'] == "admin@feeton.com":
@@ -74,12 +63,6 @@ def login():
 			return render_template('shoes.html', shoes = sh )
 
 	return render_template('login.html', error = error)
-
-
-# @app.route('/login_open',methods=['GET','POST'])
-# def login_open():
-# 	error = None
-# 	return redirect(url_for('manage'), providers=app.config['OPENID_PROVIDERS'] )
 
 
 	
@@ -119,7 +102,7 @@ def upload():
 			db.session.add(shoe_det)
 			db.session.commit()
 			flash( 'One Stock Added.' )
-		#return render_template('mgt.html')
+		
 		return jsonify({"success":True})
 
 def allowed_file(filename):
@@ -151,25 +134,6 @@ def checkout():
 	return render_template('checkout.html')
 
 
-# @app.route('/api/user',methods=['POST'])
-# def new_user():
-# 	error = None
-# 	user_email = request.form['email'] # request.json.get('email')
-# 	user_password = request.form['password'] #request.json.get('password')
-# 	if user_email is None or user_password is None:
-# 		error = "Enter a valid email and password to register."
-# 	if Users.query.filter_by(user_email = user_email).first() is None:
-# 		error = "Email already exists."
-# 	# user_reg = Users(user_email = user_email)
-# 	# user_reg.hash_password(user_password)
-# 		user_reg = Users(user_email, user_password)
-# 		db.session.add(user_reg)
-# 		db.session.commit()
-		
-# 		return jsonify({ 'user_email': user_email }),201,{ Location: url_for('shoes', id=user_id, _external=True )}
-# 	sh = db.session.query(Products)
-# 	return render_template('shoes.html',shoes = sh)
-
 
 @app.route('/shoes')
 def shoes():
@@ -179,7 +143,7 @@ def shoes():
 
 
 @app.route('/manage')
-#@login_required
+@login_required
 def manage():
 	sh = db.session.query(Products)
 	return render_template('mgt.html', info = sh)
