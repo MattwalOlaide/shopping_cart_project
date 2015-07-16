@@ -24,7 +24,7 @@
 	</div>
 	<div class="clear"></div>
 	<div class="large-8 maringLft8Rem">
-		<form>
+		<form action="" method="">
 		<h1>Manage Stock</h1>
 		
 		<table>
@@ -35,20 +35,16 @@
 				<th>Quantity</th>
 				<th>Delete</th>
 			</tr>
+		{% for inf in info %}
 			<tr>
-				<td>001</td>
-				<td contenteditable="true">Sneakers</td>
-				<td contenteditable="true">50000</td>
-				<td contenteditable="true">10</td>
+				<td>{{inf.product_id}}</td>
+				<td contenteditable="true">{{inf.product_name}}</td>
+				<td contenteditable="true">{{inf.product_price}}</td>
+				<td contenteditable="true">{{inf.product_quantity}}</td>
 				<td><i class="fi-trash size-24"></i></td>
 			</tr>
-			<tr>
-				<td>002</td>
-				<td contenteditable="true">Sneakers</td>
-				<td contenteditable="true">50000</td>
-				<td contenteditable="true">10</td>
-				<td><i class="fi-trash size-24"></i></td>
-			</tr>
+		{% endfor %}
+			
 		</table>
 		
 		<br/>

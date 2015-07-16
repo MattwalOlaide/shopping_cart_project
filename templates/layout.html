@@ -6,11 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" >
 <meta name="HandheldFriendly" content="true" >
 <link href={{url_for('static', filename='images/favicon.png')}} rel="shortcut icon" type="image/png"/>
-<link href="static/foundation/icons/foundation-icons.css" rel="stylesheet" type="text/css"/>
-<link href="static/foundation/css/foundation.css" rel="stylesheet" type="text/css"/>
-<link href="static/foundation/css/normalize.css" rel="stylesheet" type="text/css"/>
-<link href="static/css/styles.css" rel="stylesheet" type="text/css"/>
-<link href="static/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="/static/foundation/icons/foundation-icons.css" rel="stylesheet" type="text/css"/>
+<link href="/static/foundation/css/foundation.css" rel="stylesheet" type="text/css"/>
+<link href="/static/foundation/css/normalize.css" rel="stylesheet" type="text/css"/>
+<link href="/static/css/styles.css" rel="stylesheet" type="text/css"/>
+<link href="/static/css/layout.css" rel="stylesheet" type="text/css"/>
 <title>{% block title %} {% endblock  %}</title>
 </head>
 <body>
@@ -30,8 +30,15 @@
 						<li><a href="#abt">ABOUT US</a></li>
 						<li><a href="/shoes">SHOES</a></li>
 						<li><a href="#our_info">CONTACT</a></li>
-						<li><a href="/reg">SIGN UP</a></li>
-						<li><a href="/login">SIGN IN</a></li>
+						{% if not session['logged_in'] %}
+							<li><a href="/reg">SIGN UP</a></li>
+						
+							<li><a href="/login">SIGN IN</a></li>
+						{% endif %}
+						{% if session['logged_in'] %}
+							<li><a href="/logout">LOGOUT</a></li>
+
+						{% endif %}
 					</ul>
 				</nav>
 			</div>

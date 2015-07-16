@@ -70,7 +70,9 @@ def login():
 				session['logged_in'] = True
 				return redirect(url_for('manage'))
 			session['logged_in'] = True
-			return redirect(url_for('shoes'))
+			sh = db.session.query(Products)
+			return render_template('shoes.html', shoes = sh )
+
 	return render_template('login.html', error = error)
 
 
@@ -103,6 +105,7 @@ def cart(item,price):
 @app.route('/upload', methods=['POST'])
 def upload():
 	if request.method == 'POST':
+		return 'working'
 		file = request.files['file']
 		if file and allowed_file(file.filename):
 			now = datetime.now()
@@ -162,56 +165,26 @@ def new_user():
 		user_reg = Users(user_email, user_password)
 		db.session.add(user_reg)
 		db.session.commit()
+		
 		return jsonify({ 'user_email': user_email }),201,{ Location: url_for('shoes', id=user_id, _external=True )}
-	return render_template('shoes.html',error = error)
+	sh = db.session.query(Products)
+	return render_template('shoes.html',shoes = sh)
 
 
 @app.route('/shoes')
 def shoes():
-	#sh = Products.query.limit(9).all()
-	#sh= "select * FROM Products"
-	#print sh
-	#shoes = {}
-	# a_shoe = []
-	# count = 0
-	# temp = ""
-	#for shoe in sh:
-		#sh[1]
-		# temp = shoe[0]
-		#a_shoe.append(shoe[1])
-		#a_shoe.append(shoe[2])
-		#a_shoe.append(shoe[3])'''
-	
-		#shoes = sh
-		# count += 1
-	shoes ={
-			'1':['shoe1.png', 35000, 10, 'Sneakers'],
-			'2':['shoe1.png',45000,25,'cool sneaks'],
-			'3':['shoe2.png',13000,10,'Nike 360']
+	sh = db.session.query(Products)
+	return render_template('shoes.html', shoes = sh)
 
-	}
-
-	return render_template('shoes.html', shoes = shoes)
 
 
 @app.route('/manage')
 #@login_required
 def manage():
-	return render_template('mgt.html')
+	sh = db.session.query(Products)
+	return render_template('mgt.html', info = sh)
 
 
 
 if __name__=='__main__':
 	app.run(debug = True)
-
-'''
-hashlib
-
-	"shoeimage = shoe.png frm db"
-	shoes ={
-			'1':['shoe1.png', 35000, 10, 'Sneakers'],
-			'2':['shoe1.png',45000,25,'cool sneaks'],
-			'3':['shoe2.png',13000,10,'Nike 360']
-
-	}
-	'''

@@ -25,16 +25,7 @@ $('.carter').click(function(){
 	$(this).text("REMOVE ITEM");
 	$(this).toggleClass('uncart');
 
-	item = $(this).closest(div).find(.productName).text();
-	price = curr_price;
-	$.ajax({
-			type: 'POST',							
-			url: '/keep_cart', 
-			data: { item: item, price: price },
-			dataType: 'json',
-			success: function(data){
-			}
-		});
+	
 })
 
 	
@@ -69,6 +60,20 @@ $('.uncart').click(function(){
 
 })
 
+/*
 
+item = $(this).closest(div).find(.productName).text();
+	price = curr_price;
+	$.ajax({
+			type: 'POST',							
+			url: '/keep_cart', 
+			data: { item: item, price: price },
+			dataType: 'json',
+			success: function(data){
+			}
+		});
+
+
+*/
 
 

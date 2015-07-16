@@ -13,7 +13,7 @@
 		{% if error %}
 			<span class="error"><strong>Error:</strong> {{ error }}</span>
 		{% endif  %}
-		<form action="/api/user" method="post" name="login">
+		<form action="/login" method="post" name="login">
 			<input type="text" name="email" class="textbox"  placeholder="Your Email..."  required pattern="([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})" oninvalid="this.setCustomValidity(this.validity.patternMismatch ? 'Invalid E-mail' : '');"/>
 			<input type="password" name="password" class="textbox" placeholder="Your Password..." required pattern='.{8,}' oninvalid="this.setCustomValidity(this.validity.patternMismatch ? 'Incorrect Password' : '');" />
 			<input type="submit" name="submit" class="button" value="LOGIN" /> <a href="/reg" class="button right">SIGN UP</a>

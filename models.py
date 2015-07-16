@@ -1,8 +1,7 @@
 from app import db
 from passlib.apps import custom_app_context as pwd_context
 from itsdangerous import (TimedJSONWebSignatureSerializer as Serializer, BadSignature, SignatureExpired)
-#from werkzeug import generate_password_hash, check_password_hash
-#hashed_password = generate_password_hash(user_password)
+
 
 class Users(db.Model):
 	__tablename__= 'users'
@@ -12,10 +11,10 @@ class Users(db.Model):
 
 	def __init__(self,email,password):
 		self.user_email = email
-		self.user_password = hash_password(password)
+		self.user_password = password
 
 	def hash_password(self, password):
-		self.password_hash = pwd_context.encrypt(password)
+		self.password_hash = pwd_context.encrypt(self.password)
 
 	def verify_password(self, password):
 		return pwd_context.verify(password, self.password_hash)
@@ -46,7 +45,6 @@ class Products(db.Model):
 	product_name = db.Column(db.String(120))
 	product_price= db.Column(db.String(120))
 	product_quantity = db.Column(db.Integer )
-	product_description = db.Column(db.String(250))
 	product_link = db.Column(db.String(250))
 
 	def __init__(self,name,price,quantity,link):
