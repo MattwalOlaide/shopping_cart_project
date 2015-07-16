@@ -6,12 +6,68 @@
 	{% for messages in get_flashed_messages() %}
 		{{ messages }}
 	{% endfor %}
-	<div clas="shoeContainer large-8">
-		<img src="static/images/Corbis-42-18564554.jpg" draggable="true" ondragstart="drag(event)" class="left"/>
+	<div class="shoeContainer large-9 left">
+		{% for shoe in shoes %}
+				<div class="product left">
+					<img src="static/images/{{  shoes[shoe][0] }}" alt="shoe" />
+					<div class="productInfo">
+						<div class="productName"> {{  shoes[shoe][3] }}</div>
+						
+						<div class="productPrice">&#8358; {{ shoes[shoe][1] }}</div>
+						<button name="carter" class="carter" value="5000">ADD TO CART</button>
+						
+					</div>
+					
+				</div>
+		{% endfor %}
+		<!--<div class="product left">
+			<img src="static/images/{{ shoes }}" alt="Shoe"   />
+			<div class="productInfo">
+				<div class="productName"> Nike Pro</div>
+				<div class="productPrice">&#8358; 35,000</div>
+				<button name="carter" class="carter">ADD TO CART</button>
+
+			</div>
+		</div>
+		<div class="product left">
+			<img src="static/images/shoe2.png"    />
+			<div class="productInfo">
+				<div class="productName"> Nike Pro</div>
+				<div class="productPrice">&#8358; 35,000</div>
+				<button name="carter" class="carter">ADD TO CART</button>
+
+			</div>
+		</div>
+		<div class="product left">	
+			<img src="static/images/shoe3.png"    />
+		</div>
+		<div class="product left">
+			<img src="static/images/shoe4.png"   />
+		</div>
+		<div class="product left">
+			<img src="static/images/shoe3.png"    />
+		</div>
+		<div class="product left">
+			<img src="static/images/shoe4.png"   />
+		</div>
+	-->
 	</div>
 	<div class="large-1 left">&nbsp;</div>
-	<div class="large-3 left">
-		<img src="static/images/cart.jpg"  ondrop="drop(event)" ondragover="allowDrop(event)"  />
+	<div class="large-2 left sider">
+		<div class="cart">
+			
+			<img src="static/images/my_cart.png" class="left"/>
+			<label id="num_of_items" name="num_of_items" class="left itemNum">0</label>
+		</div>
+		<div class="clear"></div>
+		<div class="maringTop2Rem">
+			<button class="success"><span class="itemNum2" >0</span> ITEM(S) : &nbsp;&nbsp; &#8358; <span id="itemPrice"> 0<span></button>
+		</div>
+		<div class="clear"></div>
+		<div class="maringTop2Rem">
+			<input type="submit" class="button maringLft1Rem" name="checkout" value="VIEW CART" />
+		</div>
+		<div class="clear"></div>
 	</div>
 <div class="clear"></div>
 {% endblock %}

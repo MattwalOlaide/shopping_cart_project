@@ -1,0 +1,422 @@
+@import "font-awesome.min.css";
+@font-face {
+	font-family: Dax;
+	src: url('ufonts.com_dax-bold.ttf') format('truetype');
+	src:url('ufonts.com_dax-regular.eot') format('embedded-opentype');
+	src:url('DaxBold.eot') format('embedded-opentype');
+	src:url('DaxBold.svg') format('svg');
+	src:url('DaxBold.woff') format('woff');
+}
+@font-face {
+	font-family: Candara;
+	src: url('Candara.ttf') format('truetype');
+	src:url('Candara.eot') format('embedded-opentype');
+	src:url('Candara.svg') format('svg');
+	src:url('Candara.woff') format('woff');
+}
+
+html,body
+{
+	margin: 0;
+	padding: 0;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+body
+{
+	background: #fff;
+}
+
+.clear
+{
+	clear: both;
+}
+
+.left
+{
+	float: left
+}
+
+.right
+{
+	float: right
+}
+
+li
+{
+	list-style: none;
+}
+
+a
+{
+	text-decoration: none;
+}
+
+.maringTop2Rem
+{
+
+	margin-top: 2rem;
+}
+
+.maringRt2Rem
+{
+
+	margin-right: 2rem;
+}
+
+.maringLft1Rem
+{
+
+	margin-left: 1rem;
+}
+
+
+.maringLft5Rem
+{
+
+	margin-left: 5rem;
+}
+
+.maringLft8Rem
+{
+
+	margin-left: 8rem;
+}
+.topHeader
+{
+	width:100%;
+	height:7rem;
+	top:0;
+	background: #c7ccd4;
+	position: fixed;
+	z-index: 100;
+	
+
+}
+
+.mainContainer
+{
+	margin-top: 10rem;
+	margin-bottom: 2rem;
+	padding: 1rem;
+
+}
+
+.logo
+{
+	height:100px;
+	width:200px;
+	background: url(../images/logo.png);
+	background-repeat: no-repeat;
+	float: left;
+	margin-left: 5rem;
+	
+}
+
+.mainNav
+{
+	margin-left: 3rem;
+	margin-top: 3.5rem;
+	float: right;
+	margin-right: 8rem;
+}
+
+#abt h1
+{
+	margin-left: 25rem;
+	background: #1D3154;
+	padding: 0.7rem;
+	display: inline;
+	color: #fff;
+	
+}
+
+.shoeContainer
+{
+	box-shadow: 0 0 10px #D6D6D6;
+	min-height:20rem;
+	padding:1rem;
+	display: table;
+	
+}
+
+.shoeContainer img
+{
+	height: 10rem;
+	width: 12rem;	
+}
+
+.shoeContainer .product
+{
+	height: 17rem;
+	background:#f5f5f5;
+	margin: 1rem;
+
+}
+
+.productInfo
+{
+	padding: 0 1rem;
+	color:#ff6666;
+}
+
+.sider
+{
+	
+	background:#c7ccd4;
+	
+}
+
+.cart
+{
+	margin-top: 2rem;
+}
+
+.cart img
+{
+	margin-left: 2rem;
+}
+
+.cart label
+{
+	color:#1D3154;
+	font-family: Andalus;
+	font-size: 1rem;
+	font-weight: bold;
+
+}
+
+button.carter
+{
+	height: 3rem;
+	color: #fff;
+	font-family: dax;
+}
+
+
+
+.logger
+{
+	margin: 0 auto;
+	padding: 2rem;
+	background: #cccccc;
+
+}
+
+.logger h1
+{
+	font-weight: bold;
+	color:#1D3154;
+}
+
+.footer
+{
+	min-height: 24rem;
+	display: table;
+	width: 100%;
+	background:#1D3154;
+	color: #fff;
+	padding:1rem 0;
+}
+
+.footer h2
+{
+	color: #fff;
+	font-family: Dax;
+}
+ 
+.footer a
+{
+	color: #fff;
+}
+
+.midbox:first-of-type
+{
+	padding-right: none;
+}
+
+
+.socials ul li a.facebook
+{
+	background:url(../images/fb.png);
+	background-size:contain;
+	
+}
+
+.socials ul li:hover a.facebook
+{
+	background:url(../images/facebook2.png);
+	background-size:contain;
+}
+
+.socials ul li a.twitter
+{
+	background:url(../images/twitter.png);
+	background-size:contain;
+}
+
+
+.socials ul li:hover a.twitter
+{
+	background:url(../images/twitter2.png);
+	background-size:contain;
+}
+
+.socials ul li a.linkedIn
+{
+	background:url(../images/linkedin.png);
+	background-size:contain;
+}
+
+.socials ul li:hover a.linkedIn
+{
+	background:url(../images/linkedin2.png);
+	background-size:contain;
+}
+
+#upload
+{
+	 -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+  background-color: #FFFFFF;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #cccccc;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.75);
+  display: block;s
+  font-family: inherit;
+  font-size: 0.875rem;
+  height: 2.3125rem;
+  margin: 0 0 1rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: border-color 0.15s linear, background 0.15s linear;
+  -moz-transition: border-color 0.15s linear, background 0.15s linear;
+  -ms-transition: border-color 0.15s linear, background 0.15s linear;
+  -o-transition: border-color 0.15s linear, background 0.15s linear;
+  transition: border-color 0.15s linear, background 0.15s linear; 
+  cursor: pointer;
+}
+
+span.success
+{
+	display: inline-block;
+  font-size: 1rem;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 1rem;
+   padding:0.5625rem;
+  background: #4cff4c;
+  color: #FFFFFF;
+}
+
+button.uncart
+{
+	background: #ff0000 !important;
+}
+
+.textbox
+{
+	color:#1D3154 !important;
+
+}
+::-webkit-input-placeholder 
+{
+  color: #1D3154; 
+}
+
+:-moz-placeholder 
+{
+  /* Firefox 18- */
+  color: #1D3154; 
+}
+
+::-moz-placeholder 
+{
+  /* Firefox 19+ */
+  color: #1D3154;
+}
+
+:-ms-input-placeholder
+{
+  color: #1D3154; 
+}
+
+
+
+/*******Overridding Foundation****************/
+.button, .textbox, .textarea, #abt h1, .logger,#upload,.error,.flash,span.success,.shoeContainer, .sider, .top-bar  ul li:hover,button.carter, 
+.product
+
+
+{
+	
+	border-radius: 0.5rem !important;
+	-moz-border-radius: 0.5rem;
+	-o-border-radius: 0.5rem;
+	-ms-border-radius: 0.5rem;
+	-webkit-border-radius: 0.5rem !important;
+
+}
+
+.button
+{
+	font-family: Dax;
+}
+
+.textarea
+{
+	height: 5rem;
+}
+
+
+.textbox
+{
+	text-indent: 0.5rem;
+}
+
+.orbit-container .orbit-slide-number, .orbit-container .orbit-timer .orbit-progress,  .orbit-container:hover .orbit-timer > span
+ {
+		display:none;
+		
+}
+
+.orbit-bullets 
+{
+	 
+  margin: 0 auto 0 auto;
+   top: 0px;
+}
+
+.top-bar ul li a /*For that very stubborn top-bar-section*/
+{
+	background:none !important;	
+	color: #1D3154;
+	
+}
+
+.contain-to-grid, .top-bar, .title-area, .top-bar.expanded .title-area, .top-bar-section, .top-bar-section ul, .top-bar-section ul li
+{
+  background:none;
+  padding:0 !important;
+}
+
+
+.top-bar  ul li a
+{
+	font-family: dax;
+	font-size: 1.176rem;
+}
+
+.top-bar  ul li:hover 
+{
+	background: #007095;
+
+}
+
+.size-24 { font-size: 24px; }

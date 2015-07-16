@@ -2,6 +2,7 @@
 {% extends "layout.html" %}
 {% block title %} Feet-on |  Login {% endblock  %}
 {% block body %}
+
 <div class="large-12">
 
 	<div class="large-4 logger">
@@ -11,14 +12,14 @@
 		{% endfor %}
 		{% if error %}
 			<span class="error"><strong>Error:</strong> {{ error }}</span>
-		{% endif%}
-		<form action="" method="post">
-			<input type="text" name="email" class="textbox"  placeholder="Your Email..." value="{{ request.form.email }}"/>
-			<input type="password" name="password" class="textbox" placeholder="Your Password..." value="{{ request.form.password }}" />
+		{% endif  %}
+		<form action="/api/user" method="post" name="login">
+			<input type="text" name="email" class="textbox"  placeholder="Your Email..."  required pattern="([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})" oninvalid="this.setCustomValidity(this.validity.patternMismatch ? 'Invalid E-mail' : '');"/>
+			<input type="password" name="password" class="textbox" placeholder="Your Password..." required pattern='.{8,}' oninvalid="this.setCustomValidity(this.validity.patternMismatch ? 'Incorrect Password' : '');" />
 			<input type="submit" name="submit" class="button" value="LOGIN" /> <a href="/reg" class="button right">SIGN UP</a>
 		</form>
-		<a href="/forgot_password">Forgot My Password</a>
-		
+		<a href="#">Forgot My Password</a>
+		<!-- value="{{ request.form.email }}"  value="{{ request.form.password }}" >
 	</div>
 </div>
 {% endblock %}

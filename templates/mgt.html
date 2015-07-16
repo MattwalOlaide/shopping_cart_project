@@ -9,11 +9,14 @@
 			{{ messages }}
 		{% endfor %}
 		<h1>Upload Shoes</h1>
-		<form>
-		<label for="upload" class="textbox" ><strong>CHOOSE FILE</strong><input type="file" name="shoe_upload" id="upload" /></label>
-		<input type="text" name="shoe_name" class="textbox" />
-		<input type="text" name="shoe_price" class="textbox" />
-		<input type="text" name="shoe_quantity" class="textbox" />
+		<div id="dropbox" class="large-8">
+			<span class="message">Drop images here to upload.</span>
+		</div>
+		<form action="/upload" method="post">
+		
+		<input type="text" name="shoe_name" class="textbox"  placeholder="Type Shoe Name ..."/>
+		<input type="text" name="shoe_price" class="textbox" placeholder="Type Shoe Price ..." />
+		<input type="text" name="shoe_quantity" class="textbox"  placeholder="Type Number Of shoe(s) ..."/>
 		<textarea name="shoe_description" class="textarea"></textarea>
 		<br/>
 		<input type="submit" class="button" value="Upload" />

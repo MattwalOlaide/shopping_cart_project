@@ -5,9 +5,21 @@
 <div class="large-12">
 	<div class="large-4 logger">
 		<h1>SIGN UP</h1>
-		<form>
-			<input type="text" name="email" class="textbox"  placeholder="Your Email..."/>
-			<input type="password" name="password" class="textbox" placeholder="Your Password..." />
+		
+			{% for messages in get_flashed_messages() %}
+			<span class="success">
+				{{ messages }}
+			</span>
+			{% endfor %}
+			
+		
+		{% if error %}
+			<span class="error"><strong>Error:</strong> {{ error }}</span>
+		{% endif  %}
+
+		<form action="/api/user" method="post">
+			<input type="text" name="email" class="textbox"  placeholder="Your Email..." required pattern="([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})" oninvalid="this.setCustomValidity(this.validity.patternMismatch ? 'Invalid E-mail' : '');"  />
+			<input type="password" name="password" class="textbox" placeholder="Your Password..." required pattern='.{8,}' oninvalid="this.setCustomValidity(this.validity.patternMismatch ? 'Incorrect Password' : '');" />
 			<input type="submit" name="submit" class="button" value="REGISTER" /> <a href="/login" class="button right">SIGN IN</a>
 		</form>
 		
