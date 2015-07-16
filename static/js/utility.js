@@ -24,8 +24,9 @@ $('.carter').click(function(){
 	$('#itemPrice').text(itemPrice);
 	$(this).text("REMOVE ITEM");
 	$(this).toggleClass('uncart');
+	$(this).toggleClass('uncart');
 
-	
+	$(this).attr("disabled", "disabled");
 })
 
 	
